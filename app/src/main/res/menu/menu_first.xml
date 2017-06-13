@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.liu.noactivity.FirstActivity">
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item
+        android:id="@+id/add_item"
+        android:title="add"/>
+
+    <item
+        android:id="@+id/remove_item"
+        android:title="remove"/>
+</menu>
