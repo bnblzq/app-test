@@ -9,42 +9,29 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class FirstActivity extends AppCompatActivity {
 
-    private Button button = null;
+    private EditText editText = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
-        button = (Button)findViewById(R.id.button_1);
+      Button button = (Button)findViewById(R.id.button_1);
+      editText = (EditText)findViewById(R.id.edit_text);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(FirstActivity.this,"heeh",Toast.LENGTH_SHORT).show();
-
-                //normal explict jump
-                //Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
-
-                //implicit jump by action
-                //Intent intent = new Intent("com.example.liu.noactivity.ACTION_START");
-
-                //implicit jump by view
-                //Intent intent = new Intent(Intent.ACTION_VIEW);
-                //intent.setData(Uri.parse("http://www.baidu.com"));
-
-                //transfer data via intent
-                //String data = "hello sijian";
-                //Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
-                //intent.putExtra("slogan", data);
-
-                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
-                startActivityForResult(intent, 1);
-                startActivity(intent);
+                String input = editText.getText().toString();
+                Toast.makeText(FirstActivity.this, input, Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     @Override
