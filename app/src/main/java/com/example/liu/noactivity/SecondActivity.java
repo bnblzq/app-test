@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -15,9 +17,20 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         //get data from intent
-        Intent intent = getIntent();
-        String data = intent.getStringExtra("slogan");
-        Log.d("SecondActivity", data);
+        //Intent intent = getIntent();
+        //String data = intent.getStringExtra("slogan");
+        //Log.d("SecondActivity", data);
+
+        Button button2 = (Button)findViewById(R.id.button_2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra("return","this is return data by second activity");
+                setResult(RESULT_OK,intent);
+                finish(); // finish current activity
+            }
+        });
     }
 
     @Override

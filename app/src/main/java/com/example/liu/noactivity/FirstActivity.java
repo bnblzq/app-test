@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,12 +36,33 @@ public class FirstActivity extends AppCompatActivity {
                 //intent.setData(Uri.parse("http://www.baidu.com"));
 
                 //transfer data via intent
-                String data = "hello sijian";
+                //String data = "hello sijian";
+                //Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                //intent.putExtra("slogan", data);
+
                 Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
-                intent.putExtra("slogan", data);
+                startActivityForResult(intent, 1);
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    //revice response from second activity
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case 1:
+                if(resultCode == RESULT_OK){
+                    String resonse_data = data.getStringExtra("return");
+                    Log.d("First activity",resonse_data);
+                }
+                break;
+            default:
+                break;
+
+
+        }
     }
 
     @Override
