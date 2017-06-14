@@ -1,7 +1,9 @@
 package com.example.liu.noactivity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -11,6 +13,11 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        //get data from intent
+        Intent intent = getIntent();
+        String data = intent.getStringExtra("slogan");
+        Log.d("SecondActivity", data);
     }
 
     @Override

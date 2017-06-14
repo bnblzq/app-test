@@ -31,9 +31,13 @@ public class FirstActivity extends AppCompatActivity {
                 //Intent intent = new Intent("com.example.liu.noactivity.ACTION_START");
 
                 //implicit jump by view
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("http://www.baidu.com"));
-                
+                //Intent intent = new Intent(Intent.ACTION_VIEW);
+                //intent.setData(Uri.parse("http://www.baidu.com"));
+
+                //transfer data via intent
+                String data = "hello sijian";
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                intent.putExtra("slogan", data);
                 startActivity(intent);
             }
         });
