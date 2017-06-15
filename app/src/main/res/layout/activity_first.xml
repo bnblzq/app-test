@@ -29,4 +29,12 @@
         android:layout_height="wrap_content"
         android:hint="fill in the blank"
         android:maxLines="2"  />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:max="100"/>
+
 </LinearLayout>

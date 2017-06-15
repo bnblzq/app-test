@@ -10,12 +10,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class FirstActivity extends AppCompatActivity {
 
     private EditText editText = null;
-
+    private ProgressBar progressBar = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +24,22 @@ public class FirstActivity extends AppCompatActivity {
 
       Button button = (Button)findViewById(R.id.button_1);
       editText = (EditText)findViewById(R.id.edit_text);
+      progressBar = (ProgressBar)findViewById(R.id.progress_bar);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String input = editText.getText().toString();
-                Toast.makeText(FirstActivity.this, input, Toast.LENGTH_SHORT).show();
+
+                int progress = progressBar.getProgress();
+                Log.d("progress",progress+"");
+                if(progress>= 100) {
+                    progress = 0;
+                    progressBar.setProgress(progress);
+                }
+
+                progress +=10;
+                progressBar.setProgress(progress);
+
             }
         });
 
