@@ -1,5 +1,7 @@
 package com.example.liu.noactivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -23,22 +25,33 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first);
 
       Button button = (Button)findViewById(R.id.button_1);
-      editText = (EditText)findViewById(R.id.edit_text);
-      progressBar = (ProgressBar)findViewById(R.id.progress_bar);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(FirstActivity.this);
 
-                int progress = progressBar.getProgress();
-                Log.d("progress",progress+"");
-                if(progress>= 100) {
-                    progress = 0;
-                    progressBar.setProgress(progress);
-                }
+                dialog.setTitle("hey dialog");
+                dialog.setMessage("important");
 
-                progress +=10;
-                progressBar.setProgress(progress);
+                dialog.setCancelable(false);
+
+                dialog.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+                dialog.setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+                dialog.show();
 
             }
         });

@@ -7,14 +7,7 @@
     android:orientation="vertical"
     tools:context="com.example.liu.noactivity.FirstActivity">
 
-    <TextView
-        android:id="@+id/text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="this is text"
-        android:textSize="24sp"
-        android:textColor="#00ff00"
-        android:gravity="top" />
+
 
     <Button
         android:id="@+id/button_1"
@@ -30,11 +23,6 @@
         android:hint="fill in the blank"
         android:maxLines="2"  />
 
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:max="100"/>
+
 
 </LinearLayout>
